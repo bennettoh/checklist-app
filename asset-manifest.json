@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/checklist-app/static/css/main.5f361e03.chunk.css",
+    "main.js": "/checklist-app/static/js/main.4d9e7624.chunk.js",
+    "main.js.map": "/checklist-app/static/js/main.4d9e7624.chunk.js.map",
+    "runtime-main.js": "/checklist-app/static/js/runtime-main.167ebc15.js",
+    "runtime-main.js.map": "/checklist-app/static/js/runtime-main.167ebc15.js.map",
+    "static/js/2.e77fdbaa.chunk.js": "/checklist-app/static/js/2.e77fdbaa.chunk.js",
+    "static/js/2.e77fdbaa.chunk.js.map": "/checklist-app/static/js/2.e77fdbaa.chunk.js.map",
+    "index.html": "/checklist-app/index.html",
+    "precache-manifest.99ddb0fd9a27450ec760e9e4592e7eca.js": "/checklist-app/precache-manifest.99ddb0fd9a27450ec760e9e4592e7eca.js",
+    "service-worker.js": "/checklist-app/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/checklist-app/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.e77fdbaa.chunk.js.LICENSE.txt": "/checklist-app/static/js/2.e77fdbaa.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/checklist-app/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.167ebc15.js",
+    "static/js/2.e77fdbaa.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.4d9e7624.chunk.js"
+  ]
+}
