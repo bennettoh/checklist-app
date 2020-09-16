@@ -1,0 +1,7 @@
+.row {
+  display: flex;
+}
+
+.text {
+  flex-grow: 1;
+}
