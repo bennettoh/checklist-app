@@ -10,14 +10,17 @@ class App extends React.Component {
   };
 
   addItem = (value) => {
-    this.setState({
-      items: this.state.items.concat(value),
-    });
+    this.editItem();
+    if (value !== "") {
+      this.setState({
+        items: this.state.items.concat(value),
+      });
+    } else {
+      alert("Input is blank");
+    }
   };
 
   delete = (index) => {
-    console.log(index);
-
     this.setState({
       items: this.state.items.filter((item, location) => {
         return location !== index;
@@ -25,11 +28,19 @@ class App extends React.Component {
     });
   };
 
+  editItem = (index = 0, value = "test value") => {
+    let items = this.state.items;
+    items[index] = value;
+    this.setState({
+      items: items,
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <Entry items={this.state.items} delete={this.delete} />
         <Form onSubmit={this.addItem} />
+        <Entry items={this.state.items} delete={this.delete} />
       </div>
     );
   }
