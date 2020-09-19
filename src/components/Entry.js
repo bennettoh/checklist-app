@@ -7,24 +7,37 @@ class Entry extends React.Component {
     editModeOn: false,
   };
 
-  render() {
-    return this.props.items.map((value, index) => {
-      return (
-        <div key={index} className="row">
-          <Typography className="text" variant="body1">
-            {value}
-          </Typography>
-          <Button
-            color="secondary"
-            variant="contained"
-            type="button"
-            onClick={() => this.props.delete(index)}
-          >
-            Delete
-          </Button>
-        </div>
-      );
+  handleEditToggle = () => {
+    this.setState({
+      editModeOn: !this.state.editModeOn,
     });
+    console.log(this.state.editModeOn);
+  };
+
+  render() {
+    return (
+      <div key={this.props.index} className="row">
+        <Typography className="text" variant="body1">
+          {this.props.value}
+        </Typography>
+        <Button
+          // color="primary"
+          variant="contained"
+          type="button"
+          onClick={() => this.handleEditToggle()}
+        >
+          {this.state.editModeOn ? "Done" : "Edit"}
+        </Button>
+        <Button
+          color="secondary"
+          variant="contained"
+          type="button"
+          onClick={() => this.props.delete(this.props.index)}
+        >
+          Delete
+        </Button>
+      </div>
+    );
   }
 }
 

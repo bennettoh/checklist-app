@@ -40,7 +40,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Form onSubmit={this.addItem} />
-        <Entry items={this.state.items} delete={this.delete} />
+        {this.state.items.map((item, i) => {
+          return <Entry key={i} value={item} index={i} delete={this.delete} />;
+        })}
       </div>
     );
   }
