@@ -12,12 +12,12 @@ class App extends React.Component {
   addItem = (value) => {
     if (value === "") {
       alert("Input is blank");
-    } else {
-      let itemObj = { value: value, key: new Date().getTime().toString() };
-      this.setState({
-        items: this.state.items.concat(itemObj),
-      });
+      return;
     }
+    let itemObj = { value: value, key: new Date().getTime().toString() };
+    this.setState({
+      items: this.state.items.concat(itemObj),
+    });
   };
 
   delete = (index) => {

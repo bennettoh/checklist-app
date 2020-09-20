@@ -1,6 +1,11 @@
-.stretch {
+.item-text {
   flex-grow: 1;
 }
 .row {
   display: flex;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
 }

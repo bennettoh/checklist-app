@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, Typography } from "@material-ui/core";
+import { ArrowDropDown, ArrowDropUp, Edit, Delete } from "@material-ui/icons";
+
 import "./Entry.css";
 
 import Form from "./Form";
@@ -23,6 +25,10 @@ class Entry extends React.Component {
   render() {
     return (
       <div key={this.props.index} className="row">
+        <section className="arrows">
+          <ArrowDropUp color="action" />
+          <ArrowDropDown color="action" />
+        </section>
         {this.state.editModeOn ? (
           // Edit mode on
           <>
@@ -31,27 +37,17 @@ class Entry extends React.Component {
         ) : (
           // Edit mode off
           <>
-            <Typography className="stretch" variant="body1">
+            <Typography className="item-text" display="inline" variant="body1">
               {this.props.value}
             </Typography>
-            <Button
-              variant="contained"
-              type="button"
-              onClick={() => this.handleEditToggle()}
-            >
-              Edit
-            </Button>
+            <Edit color="action" onClick={() => this.handleEditToggle()} />
           </>
         )}
 
-        <Button
-          color="secondary"
-          variant="contained"
-          type="button"
+        <Delete
+          color="action"
           onClick={() => this.props.delete(this.props.index)}
-        >
-          Delete
-        </Button>
+        />
       </div>
     );
   }

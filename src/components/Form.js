@@ -1,4 +1,6 @@
 import React from "react";
+import { Check } from "@material-ui/icons";
+import { IconButton } from "@material-ui/core";
 
 class Form extends React.Component {
   state = {
@@ -29,9 +31,13 @@ class Form extends React.Component {
           onChange={this.handleChange}
           className="stretch"
         />
-        <button type="submit">
-          {this.props.defaultValue === "" ? "Add" : "Done"}
-        </button>
+        {this.props.defaultValue === "" ? (
+          <button type="submit">Add</button>
+        ) : (
+          <IconButton type="submit">
+            <Check color="action" />
+          </IconButton>
+        )}
       </form>
     );
   }
