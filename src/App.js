@@ -6,17 +6,17 @@ import Form from "./components/Form";
 
 class App extends React.Component {
   state = {
-    items: [1, 2, 3, 4, 5],
+    items: [{ value: "example Text", key: new Date().getTime().toString() }],
   };
 
   addItem = (value) => {
-    this.editItem();
-    if (value !== "") {
-      this.setState({
-        items: this.state.items.concat(value),
-      });
-    } else {
+    if (value === "") {
       alert("Input is blank");
+    } else {
+      let itemObj = { value: value, key: new Date().getTime().toString() };
+      this.setState({
+        items: this.state.items.concat(itemObj),
+      });
     }
   };
 
@@ -28,20 +28,34 @@ class App extends React.Component {
     });
   };
 
-  editItem = (index = 0, value = "test value") => {
-    let items = this.state.items;
-    items[index] = value;
+  editItem = (value = "test value", index = 0) => {
+    let editedList = this.state.items;
+    let editedItem = {
+      value: value,
+      key: editedList[index].key,
+    };
+    editedList[index] = editedItem;
+
     this.setState({
-      items: items,
+      items: editedList,
     });
   };
 
   render() {
     return (
       <div className="App">
-        <Form onSubmit={this.addItem} />
+        <label>Enter item text: </label>
+        <Form onSubmit={this.addItem} defaultValue="" />
         {this.state.items.map((item, i) => {
-          return <Entry key={i} value={item} index={i} delete={this.delete} />;
+          return (
+            <Entry
+              key={item.key}
+              value={item.value}
+              index={i}
+              delete={this.delete}
+              editItem={this.editItem}
+            />
+          );
         })}
       </div>
     );

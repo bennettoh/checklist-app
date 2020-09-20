@@ -2,7 +2,7 @@ import React from "react";
 
 class Form extends React.Component {
   state = {
-    value: "",
+    value: this.props.defaultValue,
   };
 
   handleChange = (event) => {
@@ -22,14 +22,16 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>Item: </label>
+      <form onSubmit={this.handleSubmit} className="row">
         <input
           type="text"
           value={this.state.value}
           onChange={this.handleChange}
+          className="stretch"
         />
-        <button type="submit">Add</button>
+        <button type="submit">
+          {this.props.defaultValue === "" ? "Add" : "Done"}
+        </button>
       </form>
     );
   }

@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Typography } from "@material-ui/core";
 import "./Entry.css";
 
+import Form from "./Form";
+
 class Entry extends React.Component {
   state = {
     editModeOn: false,
@@ -11,23 +13,37 @@ class Entry extends React.Component {
     this.setState({
       editModeOn: !this.state.editModeOn,
     });
-    console.log(this.state.editModeOn);
+  };
+
+  handleEdit = (value) => {
+    this.handleEditToggle();
+    this.props.editItem(value, this.props.index);
   };
 
   render() {
     return (
       <div key={this.props.index} className="row">
-        <Typography className="text" variant="body1">
-          {this.props.value}
-        </Typography>
-        <Button
-          // color="primary"
-          variant="contained"
-          type="button"
-          onClick={() => this.handleEditToggle()}
-        >
-          {this.state.editModeOn ? "Done" : "Edit"}
-        </Button>
+        {this.state.editModeOn ? (
+          // Edit mode on
+          <>
+            <Form onSubmit={this.handleEdit} defaultValue={this.props.value} />
+          </>
+        ) : (
+          // Edit mode off
+          <>
+            <Typography className="stretch" variant="body1">
+              {this.props.value}
+            </Typography>
+            <Button
+              variant="contained"
+              type="button"
+              onClick={() => this.handleEditToggle()}
+            >
+              Edit
+            </Button>
+          </>
+        )}
+
         <Button
           color="secondary"
           variant="contained"

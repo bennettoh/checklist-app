@@ -1,7 +1,6 @@
+.stretch {
+  flex-grow: 1;
+}
 .row {
   display: flex;
-}
-
-.text {
-  flex-grow: 1;
 }
