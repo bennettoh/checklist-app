@@ -1,3 +1,13 @@
+Simple Checklist App made with React
+
+- [ ] Text wrap for multi-line input
+- [ ] Multi-line input
+- [ ] Re-ordering feature
+- [x] Unique key to eliminate re-ordering bug
+- [x] Edit feature
+- [x] Delete feature
+- [x] Add entry feature
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
