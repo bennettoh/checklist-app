@@ -1,5 +1,9 @@
 # Simple Checklist App made with React
 
+<img src="./public/screenshot.png" />
+
+## Features
+
 - [ ] Text wrap for multi-line input
 - [ ] Multi-line input
 - [x] Basic styling
