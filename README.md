@@ -1,4 +1,4 @@
-# Simple Checklist App made with React
+# Minimalist Checklist App
 
 <img src="./public/screenshot.png" />
 
