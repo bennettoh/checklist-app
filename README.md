@@ -3,7 +3,7 @@
 - [ ] Text wrap for multi-line input
 - [ ] Multi-line input
 - [ ] Basic styling
-- [ ] Re-ordering feature
+- [x] Re-ordering feature
 - [x] Unique key to eliminate re-ordering bug
 - [x] Edit feature
 - [x] Delete feature

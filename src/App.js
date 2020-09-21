@@ -10,10 +10,6 @@ class App extends React.Component {
   };
 
   addItem = (value) => {
-    if (value === "") {
-      alert("Input is blank");
-      return;
-    }
     let itemObj = { value: value, key: new Date().getTime().toString() };
     this.setState({
       items: this.state.items.concat(itemObj),
@@ -28,7 +24,7 @@ class App extends React.Component {
     });
   };
 
-  editItem = (value = "test value", index = 0) => {
+  editItem = (value, index) => {
     let editedList = this.state.items;
     let editedItem = {
       value: value,
@@ -38,6 +34,18 @@ class App extends React.Component {
 
     this.setState({
       items: editedList,
+    });
+  };
+
+  swap = (indexA, indexB) => {
+    let array = this.state.items;
+    if (indexB === -1) return;
+    if (indexB === array.length) return;
+    let temp = array[indexA];
+    array[indexA] = array[indexB];
+    array[indexB] = temp;
+    this.setState({
+      items: array,
     });
   };
 
@@ -54,6 +62,7 @@ class App extends React.Component {
               index={i}
               delete={this.delete}
               editItem={this.editItem}
+              onSwap={this.swap}
             />
           );
         })}

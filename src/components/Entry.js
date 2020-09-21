@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography } from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
 import { ArrowDropDown, ArrowDropUp, Edit, Delete } from "@material-ui/icons";
 
 import "./Entry.css";
@@ -26,8 +26,20 @@ class Entry extends React.Component {
     return (
       <div key={this.props.index} className="row">
         <section className="arrows">
-          <ArrowDropUp color="action" />
-          <ArrowDropDown color="action" />
+          <IconButton
+            onClick={() =>
+              this.props.onSwap(this.props.index, this.props.index - 1)
+            }
+          >
+            <ArrowDropUp color="action" />
+          </IconButton>
+          <IconButton
+            onClick={() =>
+              this.props.onSwap(this.props.index, this.props.index + 1)
+            }
+          >
+            <ArrowDropDown color="action" />
+          </IconButton>
         </section>
         {this.state.editModeOn ? (
           // Edit mode on
