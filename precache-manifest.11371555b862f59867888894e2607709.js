@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "db084835a69ed4dd9ad00f739279aabd",
+    "revision": "1a87a422f2f88b79866ac180453fd3a7",
     "url": "/checklist-app/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/checklist-app/static/css/2.bc2ec701.chunk.css"
   },
   {
-    "revision": "ee30c389b5d686020c86",
-    "url": "/checklist-app/static/css/main.39edec73.chunk.css"
+    "revision": "97e0159fce9d689ab328",
+    "url": "/checklist-app/static/css/main.5eb8bd69.chunk.css"
   },
   {
     "revision": "e15d46bb1a368a14a4ba",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/checklist-app/static/js/2.09b9da3d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ee30c389b5d686020c86",
-    "url": "/checklist-app/static/js/main.afcec954.chunk.js"
+    "revision": "97e0159fce9d689ab328",
+    "url": "/checklist-app/static/js/main.1a46b07a.chunk.js"
   },
   {
     "revision": "a04f71479dbe6c254e49",
