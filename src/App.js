@@ -6,7 +6,7 @@ import Form from "./components/Form";
 
 class App extends React.Component {
   state = {
-    items: [{ value: "example Text", key: new Date().getTime().toString() }],
+    items: [],
   };
 
   addItem = (value) => {
@@ -52,8 +52,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <label>Enter item text: </label>
-        <Form onSubmit={this.addItem} defaultValue="" />
+        <section className="card">
+          <Form onSubmit={this.addItem} className="stretch" defaultValue="" />
+        </section>
         {this.state.items.map((item, i) => {
           return (
             <Entry

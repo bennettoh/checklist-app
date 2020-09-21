@@ -1,6 +1,8 @@
 import React from "react";
-import { Check } from "@material-ui/icons";
-import { IconButton, Button } from "@material-ui/core";
+import { Check, Add } from "@material-ui/icons";
+import { IconButton, TextField } from "@material-ui/core";
+
+import "./Form.css";
 
 class Form extends React.Component {
   state = {
@@ -29,15 +31,18 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="row">
-        <input
+      <form onSubmit={this.handleSubmit} className="flex center">
+        <TextField
           type="text"
+          placeholder="Write a description"
           value={this.state.value}
           onChange={this.handleChange}
           className="stretch"
         />
         {this.props.defaultValue === "" ? (
-          <Button type="submit">Add</Button>
+          <IconButton type="submit">
+            <Add color="action" />
+          </IconButton>
         ) : (
           <IconButton type="submit">
             <Check color="action" />

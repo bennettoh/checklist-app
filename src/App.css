@@ -2,3 +2,18 @@
   max-width: 500px;
   margin: auto;
 }
+
+.stretch {
+  flex-grow: 1;
+}
+
+.flex {
+  display: flex;
+  flex-grow: 1;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

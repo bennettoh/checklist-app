@@ -24,7 +24,7 @@ class Entry extends React.Component {
 
   render() {
     return (
-      <div key={this.props.index} className="row">
+      <div key={this.props.index} className="card">
         <section className="arrows">
           <IconButton
             onClick={() =>
@@ -48,18 +48,30 @@ class Entry extends React.Component {
           </>
         ) : (
           // Edit mode off
-          <>
-            <Typography className="item-text" display="inline" variant="body1">
-              {this.props.value}
-            </Typography>
-            <Edit color="action" onClick={() => this.handleEditToggle()} />
-          </>
+          <div className="flex">
+            <div className="flex">
+              <div className="column">
+                <Typography
+                  className="item-text"
+                  display="inline"
+                  variant="body1"
+                >
+                  {this.props.value}
+                </Typography>
+              </div>
+            </div>
+            <div className="column">
+              <Edit color="action" onClick={() => this.handleEditToggle()} />
+            </div>
+          </div>
         )}
 
-        <Delete
-          color="action"
-          onClick={() => this.props.delete(this.props.index)}
-        />
+        <div className="column">
+          <Delete
+            color="action"
+            onClick={() => this.props.delete(this.props.index)}
+          />
+        </div>
       </div>
     );
   }
