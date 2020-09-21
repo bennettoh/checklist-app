@@ -61,16 +61,20 @@ class Entry extends React.Component {
               </div>
             </div>
             <div className="column">
-              <Edit color="action" onClick={() => this.handleEditToggle()} />
+              <IconButton>
+                <Edit color="action" onClick={() => this.handleEditToggle()} />
+              </IconButton>
             </div>
           </div>
         )}
 
         <div className="column">
-          <Delete
-            color="action"
-            onClick={() => this.props.delete(this.props.index)}
-          />
+          <IconButton>
+            <Delete
+              color="action"
+              onClick={() => this.props.delete(this.props.index)}
+            />
+          </IconButton>
         </div>
       </div>
     );
