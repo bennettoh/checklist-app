@@ -4,8 +4,8 @@
 
 ## Features
 
-- [ ] Text wrap for multi-line input
-- [ ] Multi-line input
+- [x] Checkbox & completed task section
+- [x] Example items
 - [x] Basic styling
 - [x] Re-ordering feature
 - [x] Unique key to eliminate re-ordering bug
